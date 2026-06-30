@@ -41,13 +41,13 @@ const caseStudies: Record<
       'The creator now publishes 5-7 pieces of polished content per week from a single 1-hour conversation, with zero manual intermediary steps.',
     outcomeStat: '10 hours/week -> 30 min/week of manual work',
     tradeoffs:
-      'The system requires quality input (clear audio, coherent conversation structure). If the source material is poorly organized, the output needs more manual refinement. I built monitoring into the workflow so failures surface immediately rather than silently, but the creator still needs to review outputs - this isn\'t true fully-automated publishing.',
+      'The system requires quality input (clear audio, coherent conversation structure). If the source material is poorly organized, the output needs more manual refinement. I built monitoring into the workflow so failures surface immediately rather than silently, but the creator still needs to review outputs - this is not true fully-automated publishing.',
     tags: ['n8n', 'Claude', 'Opus Clip', 'API Integration', 'Workflow Automation'],
     architecture:
-      'Audio Input → n8n Webhook → Claude Transcription + Extraction → Opus Clip → Output Formatting → Cloud Storage',
+      'Audio Input -> n8n Webhook -> Claude Transcription + Extraction -> Opus Clip -> Output Formatting -> Cloud Storage',
   },
   'research-agent': {
-    title: 'Research & Synthesis Agent',
+    title: 'Research and Synthesis Agent',
     headline:
       'Ask a question, get a synthesized research report in minutes instead of hours.',
     context: [
@@ -63,22 +63,22 @@ const caseStudies: Record<
       'Research requests that took 3+ hours now return a draft report in 10-15 minutes, ready for human review and judgment.',
     outcomeStat: '3-4 hours -> 15 minutes per research task',
     tradeoffs:
-      'The agent outputs a strong first draft, but not a finished report. Humans need to verify sources and add judgment. For truly novel research areas, the agent sometimes conflates sources or misses nuance - it\'s a research accelerator, not a researcher replacement.',
+      'The agent outputs a strong first draft, but not a finished report. Humans need to verify sources and add judgment. For truly novel research areas, the agent sometimes conflates sources or misses nuance - it is a research accelerator, not a researcher replacement.',
     tags: ['Claude', 'LangChain', 'Web Search', 'Slack Integration', 'AI Agents'],
     architecture:
-      'Slack Query → Agent → Web Search → Claude Analysis → Formatting → Slack Return',
+      'Slack Query -> Agent -> Web Search -> Claude Analysis -> Formatting -> Slack Return',
   },
   'knowledge-base': {
     title: 'Internal Knowledge Base',
     headline:
-      "Ask your company's documentation a question and get the answer in seconds.",
+      'Ask your company documentation a question and get the answer in seconds.',
     context: [
       'A remote team had accumulated substantial internal documentation across wikis, Notion pages, and Google Docs, but nobody could find anything.',
       'Onboarding took weeks because information was scattered.',
-      'The team had tribal knowledge sitting in people's heads instead of surfaced and accessible.',
+      'The team had tribal knowledge sitting in peoples heads instead of surfaced and accessible.',
     ],
     problem:
-      'Scattered documentation created onboarding friction and repeated questions. Knowledge wasn't truly lost, just unsearchable.',
+      'Scattered documentation created onboarding friction and repeated questions. Knowledge was not truly lost, just unsearchable.',
     solution:
       'Built a RAG system with: (1) indexing of all internal docs into Pinecone, (2) a simple Next.js interface where anyone can ask questions, (3) Claude retrieves relevant docs and synthesizes an answer with citations.',
     outcome:
@@ -88,7 +88,7 @@ const caseStudies: Record<
       'The system is only as good as the documentation fed into it. If docs are outdated or vague, answers will be too. Requires a small upkeep cost to keep docs current and well-structured.',
     tags: ['Pinecone', 'Claude', 'Next.js', 'RAG', 'Knowledge Systems'],
     architecture:
-      'Documentation Upload → Pinecone Indexing → Query Interface → Vector Search → Claude Synthesis → Answer with Citations',
+      'Documentation Upload -> Pinecone Indexing -> Query Interface -> Vector Search -> Claude Synthesis -> Answer with Citations',
   },
 };
 
