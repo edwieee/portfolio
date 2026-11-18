@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Minimalist Portfolio - Edwin Biju
+   Design Direction: Ultra-clean, typography-focused, understated engineer portfolio
+   ========================================================================== */
+
+:root {
+  --bg-color: #0A0A0A;
+  --text-muted: #A8A8A8;
+  --text-white: #FFFFFF;
+  --blue-accent: #0090FF;
+  --blue-badge-bg: #112035;
+  --blue-badge-icon: #388BFD;
+  --btn-dark-bg: #161616;
+  --btn-dark-border: #262626;
+  --btn-dark-hover-bg: #222222;
+  --btn-dark-hover-border: #383838;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-muted);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Single clean viewport container */
+.viewport-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 24px;
+}
+
+/* Narrow content container centered - matching reference width of ~690px */
+.content-container {
+  width: 100%;
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 72px; /* Generous vertical spacing between nav & intro */
+}
+
+.nav-brand {
+  color: var(--text-white);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  user-select: none;
+}
+
+.nav-link {
+  color: #8E8E8E;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--blue-accent);
+}
+
+/* ==========================================================================
+   Avatar
+   ========================================================================== */
+.avatar-block {
+  margin-bottom: 22px;
+}
+
+.avatar-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  background-color: #161616;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   Introduction Content
+   ========================================================================== */
+.intro-block {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.intro-paragraph {
+  font-size: 15.5px;
+  color: var(--text-muted);
+  line-height: 1.66;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+}
+
+.highlight {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+/* Email link */
+.email-paragraph {
+  margin-top: 2px;
+}
+
+.email-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.15s ease;
+  vertical-align: middle;
+}
+
+.email-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background-color: var(--blue-badge-bg);
+  color: var(--blue-badge-icon);
+  flex-shrink: 0;
+  margin-left: 2px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.email-address {
+  transition: color 0.15s ease;
+}
+
+.email-link:hover .email-address {
+  color: var(--blue-accent);
+}
+
+.email-link:hover .email-badge {
+  background-color: #193152;
+  color: #60a5fa;
+}
+
+/* ==========================================================================
+   Action Buttons
+   ========================================================================== */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 48px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border-radius: 13px;
+  font-size: 14.5px;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Primary Button: White with dark text */
+.btn-primary {
+  background-color: var(--text-white);
+  color: var(--bg-color);
+  font-weight: 600;
+  border: 1px solid var(--text-white);
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button: Dark with subtle border */
+.btn-secondary {
+  background-color: var(--btn-dark-bg);
+  color: #EDEDED;
+  font-weight: 500;
+  border: 1px solid var(--btn-dark-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--btn-dark-hover-bg);
+  border-color: var(--btn-dark-hover-border);
+  color: var(--text-white);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 640px) {
+  .viewport-wrapper {
+    padding: 40px 20px;
+    justify-content: flex-start;
+  }
+
+  .top-nav {
+    margin-bottom: 44px;
+  }
+
+  .avatar-block {
+    margin-bottom: 20px;
+  }
+
+  .intro-paragraph {
+    font-size: 15px;
+    line-height: 1.62;
+  }
+
+  .intro-block {
+    gap: 16px;
+  }
+
+  .action-buttons {
+    margin-top: 36px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 11px 18px;
+    font-size: 14px;
+  }
+}
