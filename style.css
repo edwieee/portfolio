@@ -37,6 +37,7 @@ html, body {
 
 /* Single clean viewport container */
 .viewport-wrapper {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -47,6 +48,7 @@ html, body {
 
 /* Narrow content container centered - matching reference width of ~690px */
 .content-container {
+  min-width: 0;
   width: 100%;
   max-width: 690px;
   margin: 0 auto;
@@ -56,6 +58,7 @@ html, body {
    Navigation
    ========================================================================== */
 .top-nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,6 +71,40 @@ html, body {
   font-weight: 700;
   letter-spacing: -0.015em;
   user-select: none;
+}
+
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-link {
+  color: #8E8E8E;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+}
+
+.social-link:hover {
+  color: var(--text-white);
+  transform: translateY(-1px);
+}
+
+.social-link:active {
+  transform: translateY(0);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: transparent;
 }
 
 .nav-link {
