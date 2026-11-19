@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T00:00:00Z",
+  "title": "Design System: Edwin Biju Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Ink Canvas",
+        "canonical": "#0a0a0a",
+        "tonalRamp": ["#0a0a0a", "#171717", "#2b2b2b", "#454545", "#686868", "#929292", "#c2c2c2", "#f2f2f2"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Clear Signal",
+        "canonical": "#4da3ff",
+        "tonalRamp": ["#06294d", "#0b4178", "#135ca6", "#2179d5", "#4da3ff", "#78b9ff", "#acd5ff", "#e6f3ff"]
+      }
+    },
+    "typographyMeta": {
+      "body": {
+        "displayName": "Body",
+        "purpose": "Biography and supporting text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation and action controls."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "state-change",
+        "value": "160ms ease-out",
+        "purpose": "Subtle link and control color feedback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "600px"
+      },
+      {
+        "name": "compact-mobile",
+        "value": "390px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The direct contact action.",
+      "html": "<a class=\"ds-button-primary\" href=\"#\">get in touch ↗</a>",
+      "css": ".ds-button-primary { display:inline-flex; min-height:56px; align-items:center; justify-content:center; padding:0 20px; border-radius:14px; background:#f2f2f2; color:#0a0a0a; font:600 18px/1 Helvetica,Arial,sans-serif; text-decoration:none; transition:background-color 160ms ease-out; } .ds-button-primary:hover { background:#d9d9d9; } .ds-button-primary:focus-visible { outline:2px solid #8fc7ff; outline-offset:4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A secondary route to public work.",
+      "html": "<a class=\"ds-button-secondary\" href=\"#\">view my work</a>",
+      "css": ".ds-button-secondary { display:inline-flex; min-height:56px; align-items:center; justify-content:center; padding:0 20px; border:1px solid #2b2b2b; border-radius:14px; background:#171717; color:#a8a8a8; font:600 18px/1 Helvetica,Arial,sans-serif; text-decoration:none; transition:background-color 160ms ease-out,border-color 160ms ease-out,color 160ms ease-out; } .ds-button-secondary:hover { border-color:#424242; background:#1f1f1f; color:#f2f2f2; } .ds-button-secondary:focus-visible { outline:2px solid #8fc7ff; outline-offset:4px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "A two-point identity and social navigation.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">edwin.</a><a class=\"ds-social\" href=\"#\">twitter</a></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; justify-content:space-between; background:#0a0a0a; font:650 19px/1 Helvetica,Arial,sans-serif; } .ds-wordmark { color:#f2f2f2; text-decoration:none; } .ds-social { color:#7c7c7c; text-decoration:none; transition:color 160ms ease-out; } .ds-social:hover { color:#f2f2f2; } .ds-nav a:focus-visible { outline:2px solid #8fc7ff; outline-offset:4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Introduction",
+    "overview": "The system behaves like a considered personal note rather than a conventional portfolio. Typography, spacing, and a single portrait carry the page; every element is functional and nothing competes with the biography.",
+    "keyCharacteristics": [
+      "Near-black, flat canvas",
+      "Narrow centered reading column",
+      "Restrained white emphasis within gray prose",
+      "One blue interaction accent",
+      "Compact, gently rounded controls and imagery"
+    ],
+    "rules": [
+      {
+        "name": "The Rarity Rule",
+        "body": "Blue appears only when a text interaction needs to announce itself.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single Voice Rule",
+        "body": "Use one sans-serif family throughout; create distinction through weight, color, and spacing.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do preserve generous empty space around the single reading column.",
+      "Do reserve white for identity, emphasis, and direct actions.",
+      "Do keep all interaction states subtle but visibly keyboard-accessible."
+    ],
+    "donts": [
+      "Don't add cards, shadows, gradients, decorative technology motifs, or ambient animation.",
+      "Don't introduce extra portfolio sections into the introduction surface.",
+      "Don't widen body copy beyond its comfortable reading measure."
+    ]
+  }
+}

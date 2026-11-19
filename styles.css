@@ -1,0 +1,251 @@
+:root {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --text: #a8a8a8;
+  --text-strong: #f2f2f2;
+  --text-muted: #7c7c7c;
+  --accent: #4da3ff;
+  --accent-hover: #78b9ff;
+  --button-dark: #171717;
+  --button-border: #2b2b2b;
+  --focus: #8fc7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  scrollbar-color: #303030 var(--background);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family:
+    "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+  font-size: 19px;
+  font-weight: 550;
+  line-height: 1.38;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--text-strong);
+  color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.page-shell {
+  width: min(850px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: clamp(72px, 15.7vh, 148px) 40px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.wordmark {
+  color: var(--text-strong);
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.025em;
+}
+
+.social-link {
+  color: var(--text-muted);
+  font-weight: 650;
+  text-decoration: none;
+  transition: color 160ms ease-out;
+}
+
+.social-link:hover {
+  color: var(--text-strong);
+}
+
+.introduction {
+  margin-top: clamp(66px, 9.8vh, 92px);
+}
+
+.profile-image {
+  display: block;
+  width: 76px;
+  height: 76px;
+  border-radius: 13px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bio {
+  max-width: 74ch;
+  margin-top: 25px;
+  letter-spacing: -0.018em;
+}
+
+.bio p {
+  margin: 0;
+}
+
+.bio p + p {
+  margin-top: 22px;
+}
+
+.bio strong {
+  color: var(--text-strong);
+  font-weight: 650;
+}
+
+.email-link {
+  color: var(--text-strong);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+  text-decoration-color: transparent;
+  transition:
+    color 160ms ease-out,
+    text-decoration-color 160ms ease-out;
+}
+
+.email-link:hover {
+  color: var(--accent-hover);
+  text-decoration-color: currentColor;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease-out,
+    border-color 160ms ease-out,
+    color 160ms ease-out;
+}
+
+.button-primary {
+  background: var(--text-strong);
+  color: #111111;
+}
+
+.button-primary:hover {
+  background: #d9d9d9;
+}
+
+.button-secondary {
+  border-color: var(--button-border);
+  background: var(--button-dark);
+  color: var(--text);
+}
+
+.button-secondary:hover {
+  border-color: #424242;
+  background: #1f1f1f;
+  color: var(--text-strong);
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+    line-height: 1.48;
+  }
+
+  .page-shell {
+    width: min(100% - 40px, 850px);
+    padding-block: 38px 32px;
+  }
+
+  .site-header {
+    font-size: 17px;
+  }
+
+  .introduction {
+    margin-top: 58px;
+  }
+
+  .profile-image {
+    width: 68px;
+    height: 68px;
+    border-radius: 12px;
+  }
+
+  .bio {
+    margin-top: 23px;
+    letter-spacing: -0.012em;
+  }
+
+  .bio p + p {
+    margin-top: 20px;
+  }
+
+  .actions {
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .button {
+    min-height: 52px;
+    border-radius: 12px;
+    padding-inline: 17px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .page-shell {
+    width: calc(100% - 32px);
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .button {
+    padding-inline: 12px;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
