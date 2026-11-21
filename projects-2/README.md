@@ -1,6 +1,6 @@
 # Projects 2.0
 
-The homepage card deck and its detail pages are generated as static HTML. The collection order controls the cards, text index and next-project navigation.
+The homepage card deck and its detail pages are generated as static HTML. The first collection entry leads the deck. The remaining covers use a stable shuffle based on their slugs. The text index and next-project navigation follow collection order.
 
 1. Add a project in `collection.mjs`. Use `include(slug)` for a project from `content/projects.mjs`, or append a standalone object with the same fields and a `cover` filename to the exported array for a Projects 2.0-only entry.
 2. Give it a unique lowercase URL slug. Supply its title, field, kind, subtitle, summary, tools, narrative sections and flow steps. Optional gallery entries use the existing portfolio screenshot format. Optional links are label/URL pairs for repositories, papers or live demos.

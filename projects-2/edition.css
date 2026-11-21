@@ -32,9 +32,9 @@
 .v2-jump, .v2-bar a { font-size: 14px; }
 .v2-jump:hover, .v2-bar a:hover, .v2-story nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .v2-deck { display: flex; flex-wrap: wrap; row-gap: 38px; align-items: center; justify-content: center; padding: clamp(70px,9vw,132px) 3% clamp(72px,9vw,132px); isolation: isolate; }
-.v2-card { --angle: -7deg; --lift: 12px; display: block; position: relative; width: 27%; flex-shrink: 0; transform: translateY(var(--lift)) rotate(var(--angle)); border-radius: 9px; }
+.v2-card { --angle: -7deg; --lift: 12px; display: block; position: relative; width: 34%; flex-shrink: 0; transform: translateY(var(--lift)) rotate(var(--angle)); border-radius: 9px; }
 .v2-card + .v2-card { margin-left: -3%; }
-.v2-card:nth-child(4n + 1) { margin-left: 0; }
+.v2-card:nth-child(3n + 1) { margin-left: 0; }
 .v2-card:nth-child(4n + 2) { --angle: 3deg; --lift: -11px; }
 .v2-card:nth-child(4n + 3) { --angle: -3deg; --lift: 7px; }
 .v2-card:nth-child(4n) { --angle: 7deg; --lift: -8px; }
@@ -147,8 +147,6 @@ footer.v2-bar { border-bottom: 0; border-top: 1px solid var(--rule); }
   }
 }
 
-.v2-future-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; padding-block: 30px clamp(52px,6vw,84px); }
-.v2-future-grid .v2-card { width: 100%; margin: 0; --angle: 0deg; --lift: 0px; }
 .v2-concept-print .v2-signature { max-width: 88%; font-size: clamp(22px,2.3vw,36px); }
 .v2-concept-print .v2-mark { display: none; }
 .v2-story .v2-example-note { margin-bottom: 14px; color: var(--quiet); }
@@ -156,12 +154,9 @@ footer.v2-bar { border-bottom: 0; border-top: 1px solid var(--rule); }
 .v2-step:last-child { border-bottom: 1px solid var(--rule); }
 .v2-step summary { padding: 13px 2px; cursor: pointer; font-weight: 550; }
 .v2-step[open] p { padding: 0 14px 17px; color: var(--quiet); }
-@media (max-width: 760px) {
-  .v2-future-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
-}
 @media (max-width: 500px) {
-  .v2-future-grid { grid-template-columns: 1fr; }
-  .v2-concept-print .v2-signature { font-size: 29px; }
+  .v2-exhibit .v2-concept-print .v2-signature { font-size: 29px; }
+  .v2-deck .v2-concept-print .v2-signature { font-size: clamp(18px,4.7vw,23px); }
   .v2-intro:has(.v2-concept-print) h1 { font-size: clamp(50px,12.6vw,68px); }
 }
 
