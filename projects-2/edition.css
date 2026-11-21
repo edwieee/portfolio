@@ -53,6 +53,12 @@
 .v2-card:nth-child(9) { --angle: 8deg; --lift: 5px; --size: 104%; --offset: 3%; }
 .v2-deck .v2-signature { font-size: clamp(21px,2.15vw,32px); }
 .v2-deck .v2-imprint { font-size: clamp(8px,.68vw,10px); }
+.v2-pan:not([hidden]) { display: flex; justify-content: end; gap: 4px; margin: 8px 0 20px; }
+.v2-pan button {
+  width: 44px; height: 44px; border: 1px solid var(--rule); border-radius: 50%;
+  background: var(--ground); color: var(--ink); font-size: 18px; cursor: pointer;
+}
+.v2-pan button:disabled { opacity: .35; cursor: default; }
 .v2-print {
   position: relative; display: block; overflow: hidden; isolation: isolate; border-radius: 9px;
   background: #1a1b1e; color: #fff; aspect-ratio: 14 / 9;
@@ -125,7 +131,7 @@ footer.v2-bar { border-bottom: 0; border-top: 1px solid var(--rule); }
 .v2-card:focus-visible { z-index: 3; }
 .v2-print::before {
   position: absolute; z-index: 1; inset: 0; content: ""; pointer-events: none; opacity: 0;
-  background: radial-gradient(ellipse at var(--shine,50%) 4%, #ffffff30, transparent 62%);
+  background: radial-gradient(ellipse at var(--shine,50%) var(--shine-y,4%), #ffffff30, transparent 62%);
 }
 .v2-card:focus-visible .v2-print::before { opacity: 1; }
 @media (hover: hover) and (pointer: fine) {
@@ -135,9 +141,9 @@ footer.v2-bar { border-bottom: 0; border-top: 1px solid var(--rule); }
 }
 @media (prefers-reduced-motion: no-preference) {
   .v2-print, .v2-print img, .v2-print::before, .v2-row > span:last-child {
-    transition: transform 440ms cubic-bezier(.2,.8,.22,1), opacity 500ms, box-shadow 440ms;
+    transition: transform 420ms cubic-bezier(.22,1,.36,1), opacity 700ms cubic-bezier(.22,1,.36,1), box-shadow 420ms ease-out, filter 540ms ease-out;
   }
-  .v2-card:focus-visible .v2-print { transform: translateY(-6px) rotate(calc(-1 * var(--angle))); }
+  .v2-card:focus-visible .v2-print { transform: translateY(-4px) scale(1.03); }
   .v2-intro .v2-dek { animation: edition-type 550ms ease-out both; }
   .v2-exhibit { animation: edition-unmask 600ms cubic-bezier(.2,.7,.2,1) both; }
   @keyframes edition-type {
@@ -150,11 +156,11 @@ footer.v2-bar { border-bottom: 0; border-top: 1px solid var(--rule); }
   }
   @media (hover: hover) and (pointer: fine) {
     .v2-card:hover .v2-print {
-      transform: perspective(850px) translateY(-9px) rotate(calc(-1 * var(--angle))) rotateX(var(--pitch,0deg)) rotateY(var(--yaw,0deg));
+      transform: perspective(850px) translateY(-4px) scale(1.03) rotateX(var(--pitch,0deg)) rotateY(var(--yaw,0deg));
       box-shadow: 0 23px 30px -13px #0007;
     }
-    .v2-card:hover img { transform: scale(1.045); }
-    .v2-card:hover .v2-signature { animation: edition-type 350ms ease-out; }
+    .v2-card:hover img { transform: scale(1.045); filter: brightness(1.05); }
+    .v2-card:hover :is(.v2-signature,.v2-imprint) { animation: edition-type 400ms cubic-bezier(.22,1,.36,1); }
     .v2-row:hover > span:last-child { transform: translate(2px,-2px); }
   }
 }

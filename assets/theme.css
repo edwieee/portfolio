@@ -28,7 +28,7 @@
   box-shadow: 0 1px 1px #2225, 0 8px 12px -6px #1d24244d, 0 21px 25px -17px #1d24248a;
 }
 :root:not([data-theme="dark"]) .v2-print::after { border-color: #f9e6c733; }
-:root:not([data-theme="dark"]) .v2-print::before { background: radial-gradient(ellipse at var(--shine,50%) 4%, #fff1cf30, transparent 62%); }
+:root:not([data-theme="dark"]) .v2-print::before { background: radial-gradient(ellipse at var(--shine,50%) var(--shine-y,4%), #fff1cf30, transparent 62%); }
 :root:not([data-theme="dark"]) .section-dock { border-color: #c9cdc6; color: #4a514c; }
 :root:not([data-theme="dark"]) .section-dock a[aria-current] { color: #202723; box-shadow: 0 1px 4px #20272026; }
 :root:not([data-theme="dark"]) .section-dock a:is(:hover,:focus-visible) { background: #dce0d8; color: #202723; }

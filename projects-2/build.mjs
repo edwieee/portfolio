@@ -38,6 +38,10 @@ function homeSection() {
     <div class="v2-deck" id="upcoming" role="region" aria-label="Project cards">
       <div class="v2-spread">${cards}</div>
     </div>
+    <div class="v2-pan" hidden role="group" aria-label="Pan project cards">
+      <button type="button" data-pan="-1" aria-label="Pan cards left" aria-controls="upcoming">←</button>
+      <button type="button" data-pan="1" aria-label="Pan cards right" aria-controls="upcoming">→</button>
+    </div>
     <section id="v2-register" aria-labelledby="v2-index-title"><div class="v2-register-heading">
     <h3 id="v2-index-title">The index</h3><span>${count(collection.length)} entries</span></div>
     <ul class="v2-register">${rows}</ul></section>
