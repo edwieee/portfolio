@@ -82,14 +82,14 @@
   .v2-card:not(:nth-child(5)):not(:last-child) .v2-print { padding-inline-end: 22cqi; }
 }
 .v2-print[data-cover="lore"] { --stock: #243858; --letterpress: #eee3c9; }
-.v2-print[data-cover="rag-intelligence"] { --stock: #223e33; }
-.v2-print[data-cover="ai-agent-platform"] { --stock: #323338; }
-.v2-print[data-cover="meter-book"] { --stock: #49332c; }
-.v2-print[data-cover="passage-index"] { --stock: #384958; }
-.v2-print[data-cover="saas-automation"] { --stock: #56432d; }
-.v2-print[data-cover="pulse-study"] { --stock: #404934; }
-.v2-print[data-cover="ml-research-lab"] { --stock: #244447; }
-.v2-print[data-cover="ai-deepfake-detector"] { --stock: #512f3e; }
+.v2-print[data-cover="rag-intelligence"] { --stock: #203638; }
+.v2-print[data-cover="ai-agent-platform"] { --stock: #342d3d; }
+.v2-print[data-cover="meter-book"] { --stock: #543228; }
+.v2-print[data-cover="passage-index"] { --stock: #455064; }
+.v2-print[data-cover="saas-automation"] { --stock: #40311e; }
+.v2-print[data-cover="pulse-study"] { --stock: #738a69; --letterpress: #141b14; }
+.v2-print[data-cover="ml-research-lab"] { --stock: #333d55; }
+.v2-print[data-cover="ai-deepfake-detector"] { --stock: #302735; }
 .v2-print::after { content: ""; position: absolute; inset: 5px; border: 1px solid color-mix(in srgb,currentColor 20%,transparent); border-radius: 5px; pointer-events: none; }
 .v2-print img {
   grid-area: plate; place-self: center; display: block;
