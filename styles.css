@@ -73,6 +73,12 @@ a:focus-visible {
   letter-spacing: -0.025em;
 }
 
+.home-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .social-link {
   color: var(--text-muted);
   font-weight: 650;

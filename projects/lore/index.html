@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A knowledge assistant that connects documents, decisions and working rules to the projects they belong to.">
+  <meta name="theme-color" content="#f5f3ec">
+  <title>LORE — Edwin Biju</title>
+  <link rel="icon" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="../../projects/archive.css">
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <div class="shell">
+    <header class="mast"><a class="brand" href="../../index.html">edwin.</a>
+      <nav aria-label="Primary"><a href="../../index.html">About</a><a href="../../projects/index.html" aria-current="location">Projects</a><a href="https://github.com/edwieee">GitHub <span class="arrow" aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main id="main"><a class="back" href="../index.html">← Project index</a>
+    <div class="detail-head"><div><span class="meta">Knowledge systems / Case study</span><h1>LORE</h1>
+    <p class="dek">A workspace that remembers.</p></div><div class="plate anatomy">
+    <img class="plate-image" src="../../assets/projects/brain.webp" alt="" width="655" height="810" fetchpriority="high">
+    <span class="plate-caption">Base of the brain</span>
+  </div></div>
+    <div class="article"><aside><span class="meta">Technology</span>
+    <ul><li>React</li><li>TypeScript</li><li>Node.js</li><li>SQLite FTS5</li></ul>
+    <a class="source" href="https://github.com/edwieee/lore">LORE on GitHub (access required) <span class="arrow" aria-hidden="true">↗</span></a><a class="source" href="https://github.com/tobiadonadon1/myynd.prototype">Upstream MYND prototype <span class="arrow" aria-hidden="true">↗</span></a></aside>
+    <div class="prose"><section><h2>The problem</h2><p>A proposal might live in a document while the rule for approving it lives in someone’s head. To help draft the next proposal, an assistant needs both. LORE keeps project records, source documents and explicit working rules in a persistent workspace.</p></section>
+<section><h2>The adaptation</h2><p>LORE builds on the MYND prototype. The adaptation adds the public entrance and editorial identity, and addresses browser navigation and document uploads. The retrieval, memory and task systems come from the upstream application.</p></section>
+<section><h2>From upload to answer</h2><p>The browser sends a document to an Express API. The server extracts its text and stores it with source metadata in the signed-in account’s SQLite index. When a question arrives, full-text search retrieves relevant passages. The configured model receives those passages alongside project context and memory. The interface streams the answer and lets the reader open its sources.</p></section>
+<section><h2>Where the boundaries matter</h2><p>Uploading a second file should preserve the first. LORE treats individual uploads as additions and reconciles folder uploads against the selected folder’s snapshot. Account context also follows each asynchronous request so that retrieval stays inside the right workspace.</p></section>
+<section><h2>Working with the evidence</h2><p>The knowledge map opens indexed material for inspection. Memory lets a user review and correct working rules. Tasks can hold a draft for revision, and supported external actions have approval checks. Generating answers requires a configured model provider.</p></section>
+    <section><h2>System flow</h2>
+    <ol class="flow"><li>Upload a document</li><li>Extract and index text</li><li>Retrieve passages</li><li>Answer with sources</li></ol></section></div></div>
+<section><div class="section-title"><h2>Inside the application</h2></div><div class="gallery"><figure>
+    <a href="../../assets/projects/lore-landing.webp" aria-label="Open full image: The public entrance"><img loading="lazy" src="../../assets/projects/lore-landing.webp" alt="The public entrance in the LORE application"></a>
+    <figcaption><strong>The public entrance.</strong> The engraved brain introduces how documents and decisions move into the workspace.</figcaption></figure><figure>
+    <a href="../../assets/projects/lore-map.webp" aria-label="Open full image: Inside the knowledge map"><img loading="lazy" src="../../assets/projects/lore-map.webp" alt="Inside the knowledge map in the LORE application"></a>
+    <figcaption><strong>Inside the knowledge map.</strong> The local verification account contains uploaded documents that can be opened from the list.</figcaption></figure><figure>
+    <a href="../../assets/projects/lore-document.webp" aria-label="Open full image: Reading a source"><img loading="lazy" src="../../assets/projects/lore-document.webp" alt="Reading a source in the LORE application"></a>
+    <figcaption><strong>Reading a source.</strong> Selecting a document exposes its extracted text, including the sample policy about two reviewers.</figcaption></figure></div></section>
+    <a class="next" href="../pulse-study/index.html"><span class="meta">Next entry</span><span>Pulse Study →</span></a></main>
+    <footer><a class="brand" href="../../index.html">edwin.</a><a href="mailto:edwinbiju135@gmail.com">Get in touch <span class="arrow" aria-hidden="true">↗</span></a></footer>
+  </div>
+</body>
+</html>
