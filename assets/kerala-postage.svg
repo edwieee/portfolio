@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 216" role="img" aria-labelledby="title">
+  <title id="title">Kerala, India. A kettuvallam on the backwaters beneath coconut palms.</title>
+  <defs>
+    <pattern id="holes-x" width="10" height="6" patternUnits="userSpaceOnUse"><circle cx="5" cy="0" r="2.5"/></pattern>
+    <pattern id="holes-y" width="6" height="10" patternUnits="userSpaceOnUse"><circle cx="0" cy="5" r="2.5"/></pattern>
+    <mask id="edge">
+      <rect width="180" height="216" fill="white"/>
+      <g fill="url(#holes-x)"><path d="M0 0h180v4H0z"/><path d="M0 0h180v4H0z" transform="translate(0 216) scale(1 -1)"/></g>
+      <g fill="url(#holes-y)"><path d="M0 0h4v216H0z"/><path d="M0 0h4v216H0z" transform="translate(180 0) scale(-1 1)"/></g>
+    </mask>
+    <pattern id="sky" width="8" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5h8" stroke="#637766" stroke-width=".5"/></pattern>
+    <pattern id="reed" width="4" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(14)"><path d="M1 0v5m1-2h1" stroke="#665738" stroke-width=".85"/></pattern>
+    <pattern id="water" width="40" height="9" patternUnits="userSpaceOnUse"><path d="M2 3q6-1 13 0m9 0h8M12 7h11m11-.5h4" fill="none" stroke="#567266" stroke-width=".8"/></pattern>
+    <g id="frond" fill="#344e3f">
+      <path d="M0 0Q14-13 29-5Q13-10 0 0Z"/>
+      <path d="M3-2q3-7 8-9l-4 7 7-9-3 8 8-8-3 7 9-5-5 5 8-1-5 2 7 1-4 1 5 3q-9-5-16-2z"/>
+    </g>
+    <g id="palm">
+      <path d="M-3 55Q4 25 0 0Q9 17 3 55Z" fill="#344e3f"/>
+      <path d="m2 13 2 .5m-1 6 2 .6m-2 7 2 .6m-3 7 2 .5m-4 8 3 .7" fill="none" stroke="#b4bc94" stroke-width="1"/>
+      <use href="#frond"/><use href="#frond" transform="rotate(-31) scale(.84)"/>
+      <use href="#frond" transform="rotate(27)"/><use href="#frond" transform="rotate(54) scale(.83)"/>
+      <use href="#frond" transform="scale(-1 .92)"/><use href="#frond" transform="rotate(-32) scale(-1 .95)"/>
+      <use href="#frond" transform="rotate(-56) scale(-.8 .8)"/>
+    </g>
+    <clipPath id="scene"><path d="M14 19h152v137H14z"/></clipPath>
+  </defs>
+  <g mask="url(#edge)">
+    <path fill="#f2e7ca" d="M0 0h180v216H0z"/>
+    <g clip-path="url(#scene)">
+      <path fill="#e6dcc0" d="M14 19h152v93H14z"/><path fill="url(#sky)" d="M14 19h152v93H14z"/>
+      <circle cx="117" cy="51" r="12" fill="#f3e7c5" stroke="#a49775" stroke-width=".6"/>
+      <path d="M11 99q17-11 31-6 12-12 24-4 16-13 33-4 12-7 24-1 20-8 49-4v27H11z" fill="#9ba58a"/>
+      <path d="M11 100q16-6 38-3 22-7 39-3 19-8 35-4 19-6 47-4v22H11z" fill="#627965"/>
+      <g opacity=".64"><use href="#palm" transform="translate(124 74) scale(.36)"/><use href="#palm" transform="translate(147 72) scale(-.4 .4)"/></g>
+      <path fill="#d8ddc2" d="M14 101q65-9 152-9v65H14z"/>
+      <path fill="url(#water)" d="M14 101q65-9 152-9v65H14z"/>
+      <use href="#palm" transform="translate(31 50) rotate(-10) scale(1.02)"/>
+      <use href="#palm" transform="translate(18 65) rotate(10) scale(-.74 .72)"/>
+      <path d="M9 102q16-4 29-2l14 2-43 4z" fill="#405744"/>
+      <g stroke-linejoin="round">
+        <path d="M43 122q7-22 23-22h36q13 0 18 12l6 9z" fill="#cdb989" stroke="#564f37" stroke-width="1.5"/>
+        <path d="M43 122q7-22 23-22h36q13 0 18 12l6 9z" fill="url(#reed)"/>
+        <path d="M62 119v-10h10v10m5 0v-10h10v10m5 0v-10h9v10" fill="#455448" stroke="#e0d1aa" stroke-width="1.5"/>
+        <path d="M104 104q7 5 10 16m-54-15q24-3 41 0" fill="none" stroke="#796b49"/>
+        <path d="M28 115q8 7 19 6l78-2q12 0 24-17-3 17-17 24-24 8-79 4-19-1-25-15z" fill="#34473d" stroke="#354539"/>
+        <path d="M35 121q19 7 77 2 21 0 30-10" fill="none" stroke="#d7b67c" stroke-width="1.6"/>
+        <path d="M52 134q36 3 80-4m-69 8 44-2" fill="none" stroke="#7f9583" stroke-width="1.8"/>
+      </g>
+    </g>
+    <g fill="none" stroke="#405544"><path d="M11 16h158v143H11z" stroke-width="1.2"/><path d="M14 19h152v137H14z" stroke-width=".6"/><path d="M13 190h154" stroke-width=".8"/></g>
+    <g fill="#344c40"><text x="13" y="182" font-family="Georgia,serif" font-size="19" letter-spacing=".6">KERALA, INDIA</text>
+      <text x="14" y="201" font-family="monospace" font-size="7.5" letter-spacing="1.35">BACKWATERS</text>
+      <text x="165" y="203" text-anchor="end" font-family="Georgia,serif" font-size="14">₹5</text></g>
+    <g transform="translate(145 26) rotate(12)" fill="none" stroke="#745545" opacity=".78">
+      <circle r="17"/><circle r="13.8" stroke-width=".6"/>
+      <path d="M-37 0q8-4 16 0m-20 5q10-4 20 0m-18 5q8-4 20 0"/>
+      <text y="2.5" text-anchor="middle" font-family="monospace" font-size="6.8" fill="#745545" stroke="none">ALLEPPEY</text>
+    </g>
+  </g>
+</svg>
