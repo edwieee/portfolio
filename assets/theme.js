@@ -14,7 +14,7 @@
     const theme = preference || (system.matches ? 'dark' : 'light');
     root.dataset.theme = theme;
     const color = document.querySelector('meta[name="theme-color"]');
-    if (color) color.content = theme === 'dark' ? '#191c1b' : '#f5f2e9';
+    if (color) color.content = theme === 'dark' ? '#191c1b' : '#e9eae4';
     const button = document.querySelector('[data-theme-switch]');
     if (!button) return;
     const next = theme === 'dark' ? 'Light' : 'Dark';
