@@ -23,6 +23,7 @@ function frame(title, description, root, content, isIndex = false) {
   <link rel="icon" href="${root}assets/favicon.svg">
   <link rel="stylesheet" href="${root}projects/archive.css">
   <link rel="stylesheet" href="${root}assets/footer.css">
+  <script defer src="${root}assets/footer.js"></script>
   <script defer src="${root}projects/motion.js"></script>
 </head>
 <body>

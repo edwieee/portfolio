@@ -63,7 +63,7 @@ function detail(p, next) {
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#e9eae4"><script src="../../assets/theme.js"></script>
 <title>${html(p.title)} · Projects 2.0 — Edwin Biju</title><meta name="description" content="${html(p.summary)}">
-<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><link rel="stylesheet" href="../../assets/theme.css"><link rel="stylesheet" href="../../assets/footer.css"><script defer src="../motion.js"></script><script defer src="../navigation.js"></script></head>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><link rel="stylesheet" href="../../assets/theme.css"><link rel="stylesheet" href="../../assets/footer.css"><script defer src="../../assets/footer.js"></script><script defer src="../motion.js"></script><script defer src="../navigation.js"></script></head>
 <body class="v2 v2-detail"><a class="v2-skip" href="#article">Skip to case notes</a>
 ${dock('../../index.html', 'projects-2')}
 <div class="v2-wrap"><header class="v2-bar"><a href="../../index.html">edwin.</a><a href="${back}">← Projects 2.0</a><button type="button" class="theme-switch" data-theme-switch hidden><span>Dark mode</span></button></header>

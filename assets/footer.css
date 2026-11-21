@@ -29,6 +29,23 @@
 .footer-base { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; padding-top: 18px; border-top: 1px solid var(--footer-line); color: var(--footer-muted); font-size: 12px; }
 .footer-base p { margin: 0; }
 .footer-clock { white-space: nowrap; font: 12px/1.5 "Courier New", monospace; font-variant-numeric: tabular-nums; }
+.footer-clock abbr { text-decoration: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .signature-in-view .footer-signature path {
+    stroke-dasharray: 1;
+    animation: sign-edwin 1.45s cubic-bezier(.32,.04,.24,1) backwards;
+  }
+  .signature-in-view .footer-signature .signature-finish { animation-duration: .46s; animation-delay: 1.13s; }
+  @keyframes sign-edwin { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  .footer-stamp img { transition: transform .5s cubic-bezier(.22,1,.36,1), filter .5s ease; }
+  .portfolio-footer a { transition: color .15s ease; }
+  @media (hover: hover) and (pointer: fine) {
+    .footer-stamp:hover img {
+      transform: translateY(-5px) rotate(2.5deg);
+      filter: drop-shadow(0 1px 1px #211b1533) drop-shadow(2px 7px 5px #211b1538);
+    }
+  }
+}
 @media (max-width: 400px) {
   .footer-profile { gap: 8px; }
   .portfolio-footer .footer-links a { font-size: 14px; }
