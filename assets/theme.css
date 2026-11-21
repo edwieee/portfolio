@@ -1,26 +1,31 @@
-/* Shared by the homepage and the Projects 2.0 reading pages. */
-[data-theme="dark"] {
-  --ground: #191c1b;
-  --ink: #f1ecdf;
-  --quiet: #c2c5bb;
-  --highlight: #e5a486;
-  --rule: #515951;
-  --mount: #d5cfbf;
-  --focus: #f4bd88;
-  color-scheme: dark;
+/* Shared palette for the homepage and Projects 2.0. */
+:root {
+  color-scheme: light;
+  --ground: #fff;
+  --ink: #0a0a0a;
+  --quiet: #2f2f2f;
+  --faint: #737373;
+  --well: #f2f2f2;
+  --rule: rgba(10,10,10,.08);
+  --focus: #0a70bb;
+  --dock: #f4f4f4;
+  --dock-active: #fff;
+  --dock-shadow: 0 1px 2px rgba(10,10,10,.03), 0 10px 30px -6px rgba(10,10,10,.09);
 }
-[data-theme="dark"] .v2 {
-  --paper: #222724;
-  --ink: #f2f0e5;
-  --quiet: #c1c9be;
-  --rule: #555e55;
+:root[data-theme="dark"] {
   color-scheme: dark;
+  --ground: #0e0f11;
+  --ink: #f1f1ef;
+  --quiet: #d3d3d0;
+  --faint: #8d8d8a;
+  --well: #1a1b1e;
+  --rule: rgba(241,241,239,.1);
+  --focus: #6cbcff;
+  --dock: #1b1c1f;
+  --dock-active: #303136;
+  --dock-shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -6px rgba(0,0,0,.5);
 }
-[data-theme="dark"] .v2-heading em { color: #b4bcae; }
-[data-theme="dark"] .v2-row:hover { color: #edc1cc; }
-[data-theme="dark"] .v2-print { outline: 1px solid #a5a39770; box-shadow: 0 9px 19px -5px #050705aa; }
-[data-theme="dark"] .v2 a:focus-visible { outline-color: #f4bd88; }
-[data-theme="dark"] .v2-skip { background: var(--paper); }
+[data-theme="dark"] .v2-print { outline: 1px solid var(--rule); box-shadow: 0 9px 19px -5px #000a; }
 .theme-switch {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   min-height: 44px; min-width: 44px; padding: 5px 10px; border: 1px solid var(--rule);
@@ -32,7 +37,7 @@
   border: 1px solid currentColor; border-radius: 50%; box-shadow: inset 6px 0 currentColor;
 }
 .theme-switch:hover { border-color: currentColor; }
-.theme-switch:focus-visible { outline: 3px solid var(--focus,#995127); outline-offset: 3px; }
+.theme-switch:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .v2-bar .theme-switch { align-self: center; }
 header.v2-bar a:nth-child(2) { margin-left: auto; }
 @media (max-width: 520px) {

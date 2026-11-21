@@ -1,13 +1,5 @@
 :root {
-  --ground: #e9eae4;
-  --ink: #232b28;
-  --quiet: #505a53;
-  --highlight: #874c38;
-  --rule: #c5c8bb;
-  --mount: #fffdf4;
-  --focus: #995127;
   --display: "Edition Serif", Georgia, serif;
-  color-scheme: light;
   background: var(--ground);
   scroll-padding-top: 20px;
 }
@@ -26,9 +18,9 @@ body { margin: 0; background: var(--ground); color: var(--ink); font: 400 16px/1
 .hero { min-height: clamp(510px,70vh,720px); display: grid; grid-template-columns: minmax(0,1.35fr) minmax(0,.9fr); align-items: center; gap: 6%; padding-block: clamp(64px,7vw,105px); }
 .hero p, .hero h1, .hero figure { margin: 0; }
 .hero-role { font: 500 12px/1.5 "Courier New", monospace; text-transform: uppercase; letter-spacing: .09em; color: var(--quiet); }
-.hero-role span { margin-inline: 6px; color: var(--highlight); }
+.hero-role span { margin-inline: 6px; color: var(--ink); }
 .hero h1 { font: 400 clamp(76px,9.7vw,150px)/.98 var(--display); letter-spacing: -.055em; margin: 18px 0 21px; }
-.hero h1 em, .about h2 em { font-weight: 400; color: var(--highlight); }
+.hero h1 em, .about h2 em { font-weight: 400; color: var(--ink); }
 .hero-lead { font-size: clamp(21px,2.05vw,31px); max-width: 29ch; letter-spacing: -.035em; line-height: 1.28; color: var(--quiet); }
 .hero-lead strong { font-weight: 500; color: var(--ink); }
 .hero-actions { margin-top: 33px; font-weight: 550; }
@@ -36,7 +28,7 @@ body { margin: 0; background: var(--ground); color: var(--ink); font: 400 16px/1
 .hero-link { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-size: 14px; text-decoration: underline !important; text-underline-offset: 5px; }
 .portrait { width: min(95%,374px); justify-self: center; position: relative; isolation: isolate; }
 .portrait::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--rule); transform: rotate(-4deg); }
-.portrait-print { padding: 9px; background: var(--mount); transform: rotate(3deg); box-shadow: 0 12px 25px -14px #181c2499; }
+.portrait-print { padding: 9px; background: var(--well); transform: rotate(3deg); box-shadow: 0 12px 25px -14px #0006; }
 .portrait img { display: block; width: 100%; height: auto; filter: grayscale(.75) sepia(.18) contrast(1.07); }
 body .v2-home { margin-top: 0; border-block: 1px solid var(--rule); }
 .about { display: grid; grid-template-columns: 1fr 1.6fr; align-items: start; gap: 8%; padding-block: clamp(50px,7vw,100px); }
