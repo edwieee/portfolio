@@ -136,7 +136,7 @@ header.v2-bar > a:first-child { font-weight: 700; letter-spacing: -.055em; font-
 .v2-story figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
 .v2-story figcaption { margin-top: 8px; color: var(--quiet); font-size: 14px; }
 .v2-story .v2-source { display: block; width: fit-content; text-decoration: underline; text-underline-offset: 4px; margin-top: 10px; }
-footer.v2-bar { border-bottom: 0; border-top: 1px solid var(--rule); }
+.v2-end { border-bottom: 0; border-top: 1px solid var(--rule); }
 @media (max-width: 760px) {
   .v2-wrap { width: calc(100% - 40px); }
   .v2-deck { margin-inline: 0; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; }

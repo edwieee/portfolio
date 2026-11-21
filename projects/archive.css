@@ -28,14 +28,14 @@ a { color: inherit; text-underline-offset: .2em; }
 a:focus-visible { outline: 3px solid #b86b25; outline-offset: 4px; }
 ::selection { background: #dee2ae; color: #1c241c; }
 .shell { width: min(1192px, 90%); margin-inline: auto; }
-.mast, footer, .mast nav, .section-title, .index-title, .next { display: flex; align-items: center; justify-content: space-between; }
+.mast, .mast nav, .section-title, .index-title, .next { display: flex; align-items: center; justify-content: space-between; }
 .mast { min-height: 78px; border-bottom: 1px solid var(--line); }
 .brand { font-size: 25px; font-weight: 720; letter-spacing: -.065em; text-decoration: none; }
 .mast nav { gap: clamp(14px, 2.6vw, 38px); font-size: 14px; }
-.mast nav a, footer a, .back, .index-links a { text-decoration: none; }
+.mast nav a, .back, .index-links a { text-decoration: none; }
 .mast nav a { padding-block: 12px; }
 .mast nav [aria-current] { text-decoration: underline; text-underline-offset: 6px; }
-.mast nav a:hover, footer a:hover, .back:hover { text-decoration: underline; }
+.mast nav a:hover, .back:hover { text-decoration: underline; }
 .arrow { font: normal .9em Arial,sans-serif; }
 .skip { position: absolute; left: 8px; top: -100px; padding: 12px; background: white; z-index: 4; }
 .skip:focus { top: 8px; }
@@ -99,8 +99,7 @@ aside li, .source { font-size: 14px; line-height: 1.7; }
 figcaption { margin-top: 12px; font-size: 14px; max-width: 74ch; }
 .next { border-block: 1px solid var(--line); padding: 22px 0; margin-top: 60px; text-decoration: none; gap: 20px; }
 .next span:last-child { font: 34px var(--serif); }
-footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 22px 0 30px; font-size: 14px; }
-main:has(.next) + footer { border: 0; margin-top: 18px; }
+.shell + .portfolio-footer { margin-top: 64px; }
 @media (max-width: 850px) {
   .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .feature-copy { padding: 30px; }

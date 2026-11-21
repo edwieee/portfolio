@@ -1,5 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { projects } from '../content/projects.mjs';
+import { portfolioFooter } from './footer.mjs';
 
 const output = new URL('../projects/', import.meta.url);
 const escape = value => String(value).replace(/[&<>"']/g, char =>
@@ -21,6 +22,7 @@ function frame(title, description, root, content, isIndex = false) {
   <title>${escape(title)} — Edwin Biju</title>
   <link rel="icon" href="${root}assets/favicon.svg">
   <link rel="stylesheet" href="${root}projects/archive.css">
+  <link rel="stylesheet" href="${root}assets/footer.css">
   <script defer src="${root}projects/motion.js"></script>
 </head>
 <body>
@@ -30,8 +32,8 @@ function frame(title, description, root, content, isIndex = false) {
       <nav aria-label="Primary"><a href="${root}index.html">About</a><a href="${archive}" ${isIndex ? 'aria-current="page"' : 'aria-current="location"'}>Projects</a><a href="https://github.com/edwieee">GitHub ${arrow}</a></nav>
     </header>
     <main id="main">${content}</main>
-    <footer><a class="brand" href="${root}index.html">edwin.</a><a href="mailto:edwinbiju135@gmail.com">Get in touch ${arrow}</a></footer>
   </div>
+  ${portfolioFooter(root)}
 </body>
 </html>\n`;
 }

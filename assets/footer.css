@@ -1,0 +1,35 @@
+.portfolio-footer {
+  --footer-line: var(--rule, var(--line, #c5c8bb));
+  --footer-muted: var(--quiet, var(--muted, #505a53));
+  color: var(--ink);
+  border-top: 1px solid var(--footer-line);
+  font: 400 15px/1.5 "Helvetica Neue", Arial, sans-serif;
+}
+.footer-sheet { width: min(100% - 40px, 574px); margin-inline: auto; padding: clamp(42px, 6vw, 84px) 0 28px; }
+.footer-profile { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 16px; padding-bottom: 32px; }
+.footer-signature { display: block; width: clamp(124px, 24vw, 195px); height: auto; margin: 0 0 16px -3px; color: var(--ink); }
+.portfolio-footer .footer-name { margin: 0 0 3px; font: 400 clamp(25px, 3vw, 32px)/1.12 var(--display, var(--serif, Georgia, serif)); }
+.portfolio-footer .footer-meta { margin: 0; color: var(--footer-muted); font-size: 13px; line-height: 1.6; }
+.portfolio-footer .footer-meta a { color: inherit; text-decoration: underline dotted; text-underline-offset: 3px; }
+.portfolio-footer .footer-stamp { width: clamp(86px, 15vw, 126px); margin: 0 6px 0 0; text-align: center; }
+.footer-stamp img {
+  display: block; width: 100%; height: auto; transform: rotate(-4deg);
+  filter: drop-shadow(0 1px 1px #211b1540) drop-shadow(1px 4px 3px #211b152b);
+}
+.footer-stamp figcaption {
+  margin-top: 9px; color: var(--footer-muted);
+  font: italic clamp(14px, 2vw, 18px)/1.2 var(--display, var(--serif, Georgia, serif));
+}
+.footer-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(8px, 3vw, 24px); border-top: 1px solid var(--footer-line); padding-block: 25px 32px; }
+.portfolio-footer .footer-links h2 { margin: 0 0 9px; color: var(--footer-muted); font: 500 11px/1.3 "Courier New", monospace; text-transform: uppercase; letter-spacing: .1em; }
+.footer-links ul { margin: 0; padding: 0; list-style: none; }
+.portfolio-footer .footer-links a { display: inline-block; color: var(--footer-muted); text-decoration: none; font-size: 15px; line-height: 1.35; padding-block: 5px; }
+.portfolio-footer a:is(:hover,:focus-visible) { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.portfolio-footer .footer-links a:is(:hover,:focus-visible) { color: var(--ink); text-decoration: underline; }
+.footer-base { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; padding-top: 18px; border-top: 1px solid var(--footer-line); color: var(--footer-muted); font-size: 12px; }
+.footer-base p { margin: 0; }
+.footer-clock { white-space: nowrap; font: 12px/1.5 "Courier New", monospace; font-variant-numeric: tabular-nums; }
+@media (max-width: 400px) {
+  .footer-profile { gap: 8px; }
+  .portfolio-footer .footer-links a { font-size: 14px; }
+}

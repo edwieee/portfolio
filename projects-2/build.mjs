@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dock } from './dock.mjs';
 import { collection } from './collection.mjs';
+import { portfolioFooter } from '../scripts/footer.mjs';
 
 const directory = new URL('./', import.meta.url);
 const html = value => String(value).replace(/[&<>"']/g, ch => ({
@@ -62,7 +63,7 @@ function detail(p, next) {
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#e9eae4"><script src="../../assets/theme.js"></script>
 <title>${html(p.title)} · Projects 2.0 — Edwin Biju</title><meta name="description" content="${html(p.summary)}">
-<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><link rel="stylesheet" href="../../assets/theme.css"><script defer src="../motion.js"></script><script defer src="../navigation.js"></script></head>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><link rel="stylesheet" href="../../assets/theme.css"><link rel="stylesheet" href="../../assets/footer.css"><script defer src="../motion.js"></script><script defer src="../navigation.js"></script></head>
 <body class="v2 v2-detail"><a class="v2-skip" href="#article">Skip to case notes</a>
 ${dock('../../index.html', 'projects-2')}
 <div class="v2-wrap"><header class="v2-bar"><a href="../../index.html">edwin.</a><a href="${back}">← Projects 2.0</a><button type="button" class="theme-switch" data-theme-switch hidden><span>Dark mode</span></button></header>
@@ -79,7 +80,8 @@ ${p.example ? `<p class="v2-example-note">Follow a sample scenario through the p
 ${gallery(p)}
 ${p.links?.length ? `<section id="sources"><h2>Sources</h2>${p.links.map(([label,url])=>`<a class="v2-source" href="${html(url)}">${html(label)} ${arrow}</a>`).join('\n')}</section>` : ''}
 </article></div></main>
-<footer class="v2-bar"><a href="${back}">← Projects 2.0</a><a href="../${next.slug}/index.html">Next · ${html(next.title)} →</a></footer></div></body></html>\n`;
+<nav class="v2-bar v2-end" aria-label="Project navigation"><a href="${back}">← Projects 2.0</a><a href="../${next.slug}/index.html">Next · ${html(next.title)} →</a></nav></div>
+${portfolioFooter('../../')}</body></html>\n`;
 }
 
 for (const [i, project] of collection.entries()) {
@@ -94,4 +96,9 @@ const end = '<!-- Projects 2.0: end -->';
 const page = await readFile(home,'utf8');
 const a = page.indexOf(start), b = page.indexOf(end);
 if (a < 0 || b < a) throw new Error('Homepage Projects 2.0 markers are missing');
-await writeFile(home,page.slice(0,a+start.length)+'\n'+homeSection()+'\n'+page.slice(b));
+const updated = page.slice(0,a+start.length)+'\n'+homeSection()+'\n'+page.slice(b);
+const footerStart = '<!-- Portfolio footer: begin -->';
+const footerEnd = '<!-- Portfolio footer: end -->';
+const from = updated.indexOf(footerStart), to = updated.indexOf(footerEnd);
+if (from < 0 || to < from) throw new Error('Homepage footer markers are missing');
+await writeFile(home, updated.slice(0,from+footerStart.length)+'\n'+portfolioFooter('')+'\n'+updated.slice(to));
