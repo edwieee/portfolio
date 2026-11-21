@@ -46,7 +46,7 @@ function detail(p, next) {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${html(p.title)} · Projects 2.0 — Edwin Biju</title><meta name="description" content="${html(p.summary)}">
-<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"></head>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><script defer src="../motion.js"></script></head>
 <body class="v2 v2-detail"><a class="v2-skip" href="#article">Skip to case notes</a>
 <div class="v2-wrap"><header class="v2-bar"><a href="../../index.html">edwin.</a><a href="${back}">← Projects 2.0</a></header>
 <main><header class="v2-intro"><div><small>${html(p.kind)} / ${html(p.field)}</small><h1>${html(p.title)}</h1>
