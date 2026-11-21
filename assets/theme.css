@@ -1,0 +1,47 @@
+/* Shared by the homepage and the Projects 2.0 reading pages. */
+[data-theme="dark"] {
+  --ground: #191c1b;
+  --ink: #f1ecdf;
+  --quiet: #c2c5bb;
+  --highlight: #e5a486;
+  --rule: #515951;
+  --mount: #d5cfbf;
+  --focus: #f4bd88;
+  color-scheme: dark;
+}
+[data-theme="dark"] .v2 {
+  --paper: #222724;
+  --ink: #f2f0e5;
+  --quiet: #c1c9be;
+  --rule: #555e55;
+  color-scheme: dark;
+}
+[data-theme="dark"] .v2-heading em { color: #b4bcae; }
+[data-theme="dark"] .v2-row:hover { color: #edc1cc; }
+[data-theme="dark"] .v2-print { outline: 1px solid #a5a39770; box-shadow: 0 9px 19px -5px #050705aa; }
+[data-theme="dark"] .v2 a:focus-visible { outline-color: #f4bd88; }
+[data-theme="dark"] .v2-skip { background: var(--paper); }
+.theme-switch {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; min-width: 44px; padding: 5px 10px; border: 1px solid var(--rule);
+  background: transparent; color: inherit; border-radius: 5px; font: 500 13px/1.2 Arial,sans-serif; cursor: pointer;
+}
+.theme-switch[hidden] { display: none; }
+.theme-switch::before {
+  content: ""; display: inline-block; width: 14px; height: 14px; box-sizing: border-box;
+  border: 1px solid currentColor; border-radius: 50%; box-shadow: inset 6px 0 currentColor;
+}
+.theme-switch:hover { border-color: currentColor; }
+.theme-switch:focus-visible { outline: 3px solid var(--focus,#995127); outline-offset: 3px; }
+.v2-bar .theme-switch { align-self: center; }
+header.v2-bar a:nth-child(2) { margin-left: auto; }
+@media (max-width: 520px) {
+  .theme-switch span { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  body, .v2, .v2-row, .site-header, .v2-heading, .v2-register-heading, .hero .hero-button, .theme-switch {
+    transition: color .22s ease, background-color .22s ease, border-color .22s ease;
+  }
+  .theme-switch::before { transition: transform .25s ease; }
+  [data-theme="dark"] .theme-switch::before { transform: rotate(180deg); }
+}

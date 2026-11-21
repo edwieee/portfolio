@@ -45,10 +45,11 @@ function detail(p, next) {
   const back = '../../index.html#projects-2';
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f2e9"><script src="../../assets/theme.js"></script>
 <title>${html(p.title)} · Projects 2.0 — Edwin Biju</title><meta name="description" content="${html(p.summary)}">
-<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><script defer src="../motion.js"></script></head>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><link rel="stylesheet" href="../../assets/theme.css"><script defer src="../motion.js"></script></head>
 <body class="v2 v2-detail"><a class="v2-skip" href="#article">Skip to case notes</a>
-<div class="v2-wrap"><header class="v2-bar"><a href="../../index.html">edwin.</a><a href="${back}">← Projects 2.0</a></header>
+<div class="v2-wrap"><header class="v2-bar"><a href="../../index.html">edwin.</a><a href="${back}">← Projects 2.0</a><button type="button" class="theme-switch" data-theme-switch hidden><span>Dark mode</span></button></header>
 <main><header class="v2-intro"><div><small>${html(p.kind)} / ${html(p.field)}</small><h1>${html(p.title)}</h1>
 <p class="v2-dek">${html(p.subtitle)}</p><p>${html(p.summary)}</p></div><div class="v2-exhibit">${cover(p,'../../')}</div></header>
 <div class="v2-story" id="article"><aside><nav aria-label="On this page"><small>Contents</small>${chapters}
