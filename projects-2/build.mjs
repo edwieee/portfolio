@@ -9,16 +9,16 @@ const arrow = '<span aria-hidden="true">↗</span>';
 const count = n => String(n).padStart(2, '0');
 
 function cover(p, root) {
-  return `<span class="v2-print">
+  return `<span class="v2-print${p.example ? ' v2-concept-print' : ''}">
     <img src="${root}projects-2/art/${html(p.cover)}" width="840" height="540" alt="" loading="lazy">
-    <span class="v2-imprint">${html(p.field)}</span>
+    <span class="v2-imprint">${p.example ? html(p.kind) : html(p.field)}</span>
     <span class="v2-signature">${html(p.title)}</span>
     <span class="v2-mark" aria-hidden="true">e.</span>
   </span>`;
 }
 
 function homeSection() {
-  const deck = collection.map(p => `<a class="v2-card" href="projects-2/${p.slug}/index.html" aria-label="Read ${html(p.title)} — ${html(p.kind)}">${cover(p, '')}</a>`).join('\n');
+  const cards = entries => entries.map(p => `<a class="v2-card" href="projects-2/${p.slug}/index.html" aria-label="Read ${html(p.title)} — ${html(p.kind)}">${cover(p, '')}</a>`).join('\n');
   const rows = collection.map(p => `<li><a class="v2-row" href="projects-2/${p.slug}/index.html">
     <span><small>${html(p.field)} · ${html(p.kind)}</small><strong>${html(p.title)}</strong></span>
     <span class="v2-desc">${html(p.summary)}</span>${arrow}</a></li>`).join('\n');
@@ -26,7 +26,10 @@ function homeSection() {
   <div class="v2-wrap"><header class="v2-heading">
     <h2 id="v2-heading">Projects <em>2.0</em></h2>
     <a class="v2-jump" href="#v2-register">Project index ↓</a></header>
-    <div class="v2-deck">${deck}</div>
+    <div class="v2-deck">${cards(collection.filter(p => !p.example))}</div>
+    <section class="v2-futures" id="upcoming" aria-labelledby="upcoming-title"><div class="v2-register-heading">
+    <h3 id="upcoming-title">Upcoming concepts</h3><span>${count(collection.filter(p => p.example).length)} studies</span></div>
+    <div class="v2-future-grid">${cards(collection.filter(p => p.example))}</div></section>
     <section id="v2-register" aria-labelledby="v2-index-title"><div class="v2-register-heading">
     <h3 id="v2-index-title">The index</h3><span>${count(collection.length)} entries</span></div>
     <ul class="v2-register">${rows}</ul></section>
@@ -53,11 +56,13 @@ function detail(p, next) {
 <main><header class="v2-intro"><div><small>${html(p.kind)} / ${html(p.field)}</small><h1>${html(p.title)}</h1>
 <p class="v2-dek">${html(p.subtitle)}</p><p>${html(p.summary)}</p></div><div class="v2-exhibit">${cover(p,'../../')}</div></header>
 <div class="v2-story" id="article"><aside><nav aria-label="On this page"><small>Contents</small>${chapters}
-<a href="#flow">System flow</a>${p.gallery?.length ? '<a href="#screens">Application views</a>' : ''}</nav></aside>
+<a href="#flow">${p.example ? 'Illustrated walkthrough' : 'System flow'}</a>${p.gallery?.length ? '<a href="#screens">Application views</a>' : ''}</nav></aside>
 <article><div class="v2-tools">${p.tools.map(tool=>`<span>${html(tool)}</span>`).join('')}</div>
 ${p.sections.map(([title,copy], i)=>`<section id="chapter-${i+1}"><h2>${html(title)}</h2><p>${html(copy)}</p></section>`).join('\n')}
-<section id="flow"><h2>${p.kind==='Case study'?'System flow':'Proposed system flow'}</h2>
-<ol>${p.flow.map(step=>`<li>${html(step)}</li>`).join('')}</ol></section>
+<section id="flow"><h2>${p.example ? 'Illustrated walkthrough' : p.kind==='Case study'?'System flow':'Proposed system flow'}</h2>
+${p.example ? `<p class="v2-example-note">Follow a sample scenario through the proposed system.</p>
+    ${p.flow.map((step,i)=>`<details class="v2-step"><summary>${html(step)}</summary><p>${html(p.example[i])}</p></details>`).join('')}` :
+    `<ol>${p.flow.map(step=>`<li>${html(step)}</li>`).join('')}</ol>`}</section>
 ${gallery(p)}
 ${p.links?.length ? `<section><h2>Sources</h2>${p.links.map(([label,url])=>`<a class="v2-source" href="${html(url)}">${html(label)} ${arrow}</a>`).join('\n')}</section>` : ''}
 </article></div></main>

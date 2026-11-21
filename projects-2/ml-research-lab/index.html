@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e9eae4"><script src="../../assets/theme.js"></script>
+<title>ML Research Lab · Projects 2.0 — Edwin Biju</title><meta name="description" content="An experiment notebook concept for tracing a predictive model back to its dataset, assumptions and evaluation.">
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><link rel="stylesheet" href="../../assets/theme.css"><script defer src="../motion.js"></script></head>
+<body class="v2 v2-detail"><a class="v2-skip" href="#article">Skip to case notes</a>
+<div class="v2-wrap"><header class="v2-bar"><a href="../../index.html">edwin.</a><a href="../../index.html#projects-2">← Projects 2.0</a><button type="button" class="theme-switch" data-theme-switch hidden><span>Dark mode</span></button></header>
+<main><header class="v2-intro"><div><small>Upcoming concept / Predictive modelling</small><h1>ML Research Lab</h1>
+<p class="v2-dek">Make two experiments comparable.</p><p>An experiment notebook concept for tracing a predictive model back to its dataset, assumptions and evaluation.</p></div><div class="v2-exhibit"><span class="v2-print v2-concept-print">
+    <img src="../../projects-2/art/ml-research-lab.webp" width="840" height="540" alt="" loading="lazy">
+    <span class="v2-imprint">Upcoming concept</span>
+    <span class="v2-signature">ML Research Lab</span>
+    <span class="v2-mark" aria-hidden="true">e.</span>
+  </span></div></header>
+<div class="v2-story" id="article"><aside><nav aria-label="On this page"><small>Contents</small><a href="#chapter-1">Research brief</a>
+<a href="#chapter-2">Planned features</a>
+<a href="#chapter-3">Proposed architecture</a>
+<a href="#flow">Illustrated walkthrough</a></nav></aside>
+<article><div class="v2-tools"><span>Dataset versions</span><span>Baseline models</span><span>Error analysis</span></div>
+<section id="chapter-1"><h2>Research brief</h2><p>A change in a score can come from the model, the split or the data itself. The proposed lab would keep those choices visible so a researcher could repeat a comparison and explain the differences.</p></section>
+<section id="chapter-2"><h2>Planned features</h2><p>Experiments could pin a dataset version, register a baseline and compare errors by subgroup or time window. Each run would carry its parameters, split definition and reproducibility notes.</p></section>
+<section id="chapter-3"><h2>Proposed architecture</h2><p>A dataset registry would supply immutable snapshots. An experiment runner would execute a recorded configuration and write predictions to an artifact store. A comparison view would group compatible runs and highlight changed inputs.</p></section>
+<section id="flow"><h2>Illustrated walkthrough</h2>
+<p class="v2-example-note">Follow a sample scenario through the proposed system.</p>
+    <details class="v2-step"><summary>Freeze a dataset</summary><p>A sample study asks how to forecast weekly demand.</p></details><details class="v2-step"><summary>Run a baseline</summary><p>A seasonal baseline would use the same time-based split as a candidate model.</p></details><details class="v2-step"><summary>Compare predictions</summary><p>The comparison would plot both forecasts against held-out observations.</p></details><details class="v2-step"><summary>Inspect errors</summary><p>A researcher could inspect holiday weeks separately before drawing a conclusion.</p></details></section>
+
+
+</article></div></main>
+<footer class="v2-bar"><a href="../../index.html#projects-2">← Projects 2.0</a><a href="../ai-agent-platform/index.html">Next · AI Agent Platform →</a></footer></div></body></html>

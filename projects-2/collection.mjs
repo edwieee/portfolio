@@ -1,3 +1,4 @@
+import { concepts } from './concepts.mjs';
 import { projects } from '../content/projects.mjs';
 
 // Entries already documented in the portfolio reuse their verified copy.
@@ -7,4 +8,4 @@ function include(slug) {
   if (!project) throw new Error('Missing project: ' + slug);
   return { ...project, cover: slug + '.webp' };
 }
-export const collection = ['lore', 'pulse-study', 'passage-index', 'meter-book'].map(include);
+export const collection = ['lore', 'pulse-study', 'passage-index', 'meter-book'].map(include).concat(concepts);
