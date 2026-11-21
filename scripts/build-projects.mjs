@@ -21,6 +21,7 @@ function frame(title, description, root, content, isIndex = false) {
   <title>${escape(title)} — Edwin Biju</title>
   <link rel="icon" href="${root}assets/favicon.svg">
   <link rel="stylesheet" href="${root}projects/archive.css">
+  <script defer src="${root}projects/motion.js"></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>

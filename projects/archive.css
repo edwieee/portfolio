@@ -128,3 +128,31 @@ main:has(.next) + footer { border: 0; margin-top: 18px; }
   aside ul { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 8px 0 12px; }
   .gallery figure:first-child { grid-column: auto; }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 180ms; }
+  html { scroll-behavior: smooth; }
+  .feature-sub, .dek { animation: text-arrive 540ms cubic-bezier(.2,.7,.2,1) both; }
+  .feature .plate, .detail-head .plate { animation: uncover 620ms cubic-bezier(.2,.7,.2,1) both; }
+  .plate-image, .card h3 .arrow, .read span {
+    transition: transform 460ms cubic-bezier(.2,.7,.2,1);
+  }
+  @keyframes text-arrive {
+    from { opacity: .4; filter: blur(3px); transform: translateY(5px); }
+    to { opacity: 1; filter: blur(0); transform: translateY(0); }
+  }
+  @keyframes uncover {
+    from { clip-path: inset(0 0 7% 0); }
+    to { clip-path: inset(0); }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    :is(.card, .feature):hover .plate-image { transform: scale(1.045); }
+    .card:hover h3 .arrow { transform: translate(2px,-2px); }
+    .feature:hover .read span { transform: translateX(5px); }
+    .card:hover .card-text .meta { animation: text-arrive 420ms both; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
