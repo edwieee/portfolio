@@ -80,7 +80,7 @@ function detail(p) {
   const root = '../../';
   const next = projects[(projects.indexOf(p) + 1) % projects.length];
   const figures = (p.gallery || []).map(([src,title,caption]) => `<figure>
-    <a href="${root}assets/projects/${escape(src)}.webp" aria-label="Open full image: ${escape(title)}"><img loading="lazy" src="${root}assets/projects/${escape(src)}.webp" alt="${escape(title)} in the LORE application"></a>
+    <a href="${root}assets/projects/${escape(src)}.webp" aria-label="Open full image: ${escape(title)}"><img loading="lazy" src="${root}assets/projects/${escape(src)}.webp" alt="${escape(title)} in the ${escape(p.title)} application"></a>
     <figcaption><strong>${escape(title)}.</strong> ${escape(caption)}</figcaption></figure>`).join('');
   const article = `<a class="back" href="../index.html">← Project index</a>
     <div class="detail-head"><div><span class="meta">${escape(p.field)} / ${escape(p.kind)}</span><h1>${escape(p.title)}</h1>
