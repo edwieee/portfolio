@@ -1,16 +1,43 @@
 /* Shared palette for the homepage and Projects 2.0. */
 :root {
   color-scheme: light;
-  --ground: #fff;
-  --ink: #0a0a0a;
-  --quiet: #2f2f2f;
-  --faint: #737373;
-  --well: #f2f2f2;
-  --rule: rgba(10,10,10,.08);
-  --focus: #0a70bb;
-  --dock: #f4f4f4;
-  --dock-active: #fff;
-  --dock-shadow: 0 1px 2px rgba(10,10,10,.03), 0 10px 30px -6px rgba(10,10,10,.09);
+  --ground: #f5f2e9;
+  --ink: #232b28;
+  --quiet: #505a53;
+  --faint: #4a514c;
+  --well: #fffdf4;
+  --rule: #c5c8bb;
+  --focus: #995127;
+  --dock: #eeefe9;
+  --dock-active: #fffef7;
+  --dock-shadow: 0 3px 12px -5px #20272045;
+}
+
+:root:not([data-theme="dark"]) .v2 {
+  --ground: #e9eae4;
+  --ink: #262c2a;
+  --quiet: #56605d;
+  --faint: #6a726b;
+  --rule: #b9c0b9;
+  --focus: #95642e;
+}
+:root:not([data-theme="dark"]) :is(.hero-role span, .hero h1 em, .about h2 em) { color: #874c38; }
+:root:not([data-theme="dark"]) .portrait-print { box-shadow: 0 12px 25px -14px #181c2499; }
+:root:not([data-theme="dark"]) .v2-print {
+  background: #352e36; color: #fff4df;
+  box-shadow: 0 1px 1px #2225, 0 8px 12px -6px #1d24244d, 0 21px 25px -17px #1d24248a;
+}
+:root:not([data-theme="dark"]) .v2-print::after { border-color: #f9e6c733; }
+:root:not([data-theme="dark"]) .v2-print::before { background: radial-gradient(ellipse at var(--shine,50%) 4%, #fff1cf30, transparent 62%); }
+:root:not([data-theme="dark"]) .section-dock { border-color: #c9cdc6; color: #4a514c; }
+:root:not([data-theme="dark"]) .section-dock a[aria-current] { color: #202723; box-shadow: 0 1px 4px #20272026; }
+:root:not([data-theme="dark"]) .section-dock a:is(:hover,:focus-visible) { background: #dce0d8; color: #202723; }
+:root:not([data-theme="dark"]) .section-dock a span { background: #2a302b; color: white; }
+@media (hover: hover) and (pointer: fine) {
+  :root:not([data-theme="dark"]) .v2-row:hover { color: #65495e; }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  :root:not([data-theme="dark"]) .v2-card:hover .v2-print { box-shadow: 0 23px 30px -13px #1d24247a; }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
