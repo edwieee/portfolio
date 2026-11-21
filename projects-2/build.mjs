@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dock } from './dock.mjs';
 import { collection } from './collection.mjs';
 
 const directory = new URL('./', import.meta.url);
@@ -22,7 +23,8 @@ function homeSection() {
   const rows = collection.map(p => `<li><a class="v2-row" href="projects-2/${p.slug}/index.html">
     <span><small>${html(p.field)} · ${html(p.kind)}</small><strong>${html(p.title)}</strong></span>
     <span class="v2-desc">${html(p.summary)}</span>${arrow}</a></li>`).join('\n');
-  return `<section class="v2 v2-home" id="projects-2" aria-labelledby="v2-heading">
+  return `${dock('', 'introduction')}
+<section class="v2 v2-home" id="projects-2" aria-labelledby="v2-heading">
   <div class="v2-wrap"><header class="v2-heading">
     <h2 id="v2-heading">Projects <em>2.0</em></h2>
     <a class="v2-jump" href="#v2-register">Project index ↓</a></header>
@@ -50,8 +52,9 @@ function detail(p, next) {
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#e9eae4"><script src="../../assets/theme.js"></script>
 <title>${html(p.title)} · Projects 2.0 — Edwin Biju</title><meta name="description" content="${html(p.summary)}">
-<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><link rel="stylesheet" href="../../assets/theme.css"><script defer src="../motion.js"></script></head>
+<link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../edition.css"><link rel="stylesheet" href="../../assets/theme.css"><script defer src="../motion.js"></script><script defer src="../navigation.js"></script></head>
 <body class="v2 v2-detail"><a class="v2-skip" href="#article">Skip to case notes</a>
+${dock('../../index.html', p.example ? 'upcoming' : 'projects-2')}
 <div class="v2-wrap"><header class="v2-bar"><a href="../../index.html">edwin.</a><a href="${back}">← Projects 2.0</a><button type="button" class="theme-switch" data-theme-switch hidden><span>Dark mode</span></button></header>
 <main><header class="v2-intro"><div><small>${html(p.kind)} / ${html(p.field)}</small><h1>${html(p.title)}</h1>
 <p class="v2-dek">${html(p.subtitle)}</p><p>${html(p.summary)}</p></div><div class="v2-exhibit">${cover(p,'../../')}</div></header>
