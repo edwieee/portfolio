@@ -31,13 +31,28 @@
 .v2-heading em { font-weight: 400; color: var(--faint); }
 .v2-jump, .v2-bar a { font-size: 14px; }
 .v2-jump:hover, .v2-bar a:hover, .v2-story nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.v2-deck { display: flex; flex-wrap: wrap; row-gap: 38px; align-items: center; justify-content: center; padding: clamp(70px,9vw,132px) 3% clamp(72px,9vw,132px); isolation: isolate; }
-.v2-card { --angle: -7deg; --lift: 12px; display: block; position: relative; width: 34%; flex-shrink: 0; transform: translateY(var(--lift)) rotate(var(--angle)); border-radius: 9px; }
-.v2-card + .v2-card { margin-left: -3%; }
-.v2-card:nth-child(3n + 1) { margin-left: 0; }
-.v2-card:nth-child(4n + 2) { --angle: 3deg; --lift: -11px; }
-.v2-card:nth-child(4n + 3) { --angle: -3deg; --lift: 7px; }
-.v2-card:nth-child(4n) { --angle: 7deg; --lift: -8px; }
+/* Five cards across; the lower four sit between the upper cards. */
+.v2-deck { isolation: isolate; }
+.v2-spread {
+  display: grid; grid-template-columns: repeat(10,minmax(0,1fr));
+  align-items: center; justify-items: center; row-gap: clamp(12px,1.6vw,24px);
+  padding: clamp(54px,6.5vw,90px) 2.5% clamp(58px,7vw,96px);
+}
+.v2-card {
+  --angle: -8deg; --lift: 7px; --offset: 0%; --size: 106%;
+  grid-column: span 2; position: relative; display: block; width: var(--size);
+  transform: translate(var(--offset),var(--lift)) rotate(var(--angle)); border-radius: 9px;
+}
+.v2-card:nth-child(2) { --angle: 4deg; --lift: -11px; --size: 99%; --offset: -2%; }
+.v2-card:nth-child(3) { --angle: -4deg; --lift: 12px; --size: 111%; }
+.v2-card:nth-child(4) { --angle: 7deg; --lift: -7px; --size: 98%; --offset: 2%; }
+.v2-card:nth-child(5) { --angle: -6deg; --lift: 3px; --size: 105%; }
+.v2-card:nth-child(6) { grid-column: 2 / span 2; --angle: 5deg; --lift: -4px; --size: 111%; --offset: -4%; }
+.v2-card:nth-child(7) { --angle: -7deg; --lift: 8px; --size: 102%; --offset: -1%; }
+.v2-card:nth-child(8) { --angle: 3deg; --lift: -8px; --size: 109%; --offset: 2%; }
+.v2-card:nth-child(9) { --angle: 8deg; --lift: 5px; --size: 104%; --offset: 3%; }
+.v2-deck .v2-signature { font-size: clamp(21px,2.15vw,32px); }
+.v2-deck .v2-imprint { font-size: clamp(8px,.68vw,10px); }
 .v2-print {
   position: relative; display: block; overflow: hidden; isolation: isolate; border-radius: 9px;
   background: #1a1b1e; color: #fff; aspect-ratio: 14 / 9;
@@ -87,11 +102,8 @@ header.v2-bar > a:first-child { font-weight: 700; letter-spacing: -.055em; font-
 footer.v2-bar { border-bottom: 0; border-top: 1px solid var(--rule); }
 @media (max-width: 760px) {
   .v2-wrap { width: calc(100% - 40px); }
-  .v2-deck { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px 10px; padding: 48px 3%; }
-  .v2-card { width: auto; --angle: -3deg; --lift: 0px; }
-  .v2-card + .v2-card { margin-left: 0; }
-  .v2-card:nth-child(n) { --lift: 0px; }
-  .v2-card:nth-child(4n) { --angle: 3deg; }
+  .v2-deck { overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; }
+  .v2-spread { min-width: 880px; padding: 44px 30px 48px; row-gap: 17px; }
   .v2-row { grid-template-columns: 1fr 1fr 15px; gap: 14px; }
   .v2-intro { gap: 4%; }
   .v2-story { grid-template-columns: 1fr; gap: 20px; }
@@ -156,7 +168,7 @@ footer.v2-bar { border-bottom: 0; border-top: 1px solid var(--rule); }
 .v2-step[open] p { padding: 0 14px 17px; color: var(--quiet); }
 @media (max-width: 500px) {
   .v2-exhibit .v2-concept-print .v2-signature { font-size: 29px; }
-  .v2-deck .v2-concept-print .v2-signature { font-size: clamp(18px,4.7vw,23px); }
+  .v2-deck .v2-concept-print .v2-signature { font-size: 21px; }
   .v2-intro:has(.v2-concept-print) h1 { font-size: clamp(50px,12.6vw,68px); }
 }
 

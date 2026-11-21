@@ -35,7 +35,9 @@ function homeSection() {
   <div class="v2-wrap"><header class="v2-heading">
     <h2 id="v2-heading">Projects <em>2.0</em></h2>
     <a class="v2-jump" href="#v2-register">Project index ↓</a></header>
-    <div class="v2-deck" id="upcoming">${cards}</div>
+    <div class="v2-deck" id="upcoming" role="region" aria-label="Project cards">
+      <div class="v2-spread">${cards}</div>
+    </div>
     <section id="v2-register" aria-labelledby="v2-index-title"><div class="v2-register-heading">
     <h3 id="v2-index-title">The index</h3><span>${count(collection.length)} entries</span></div>
     <ul class="v2-register">${rows}</ul></section>
