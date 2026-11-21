@@ -11,8 +11,8 @@ const arrow = '<span aria-hidden="true">↗</span>';
 const count = n => String(n).padStart(2, '0');
 
 function cover(p, root) {
-  return `<span class="v2-print${p.example ? ' v2-concept-print' : ''}">
-    <img src="${root}projects-2/art/${html(p.cover)}" width="840" height="540" alt="" loading="lazy">
+  return `<span class="v2-print${p.example ? ' v2-concept-print' : ''}" data-cover="${html(p.slug)}">
+    <img src="${root}projects-2/art/${html(p.cover)}" alt="" loading="lazy">
     <span class="v2-imprint">${p.example ? html(p.kind) : html(p.field)}</span>
     <span class="v2-signature">${html(p.title)}</span>
     <span class="v2-mark" aria-hidden="true">e.</span>

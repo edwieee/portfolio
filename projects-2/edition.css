@@ -61,11 +61,21 @@
 .v2-pan button:disabled { opacity: .35; cursor: default; }
 .v2-print {
   position: relative; display: block; overflow: hidden; isolation: isolate; border-radius: 9px;
-  background: #1a1b1e; color: #fff; aspect-ratio: 14 / 9;
+  background: var(--stock, #34373a) url("art/paper-grain.webp") repeat;
+  color: var(--letterpress, #f1e8d6); aspect-ratio: 14 / 9;
   box-shadow: 0 1px 1px #2225, 0 8px 12px -6px #0003, 0 21px 25px -17px #0008;
 }
-.v2-print::after { content: ""; position: absolute; inset: 5px; border: 1px solid #ffffff33; border-radius: 5px; pointer-events: none; }
-.v2-print img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.v2-print[data-cover="lore"] { --stock: #243858; --letterpress: #eee3c9; }
+.v2-print[data-cover="rag-intelligence"] { --stock: #223e33; }
+.v2-print[data-cover="ai-agent-platform"] { --stock: #323338; }
+.v2-print[data-cover="meter-book"] { --stock: #49332c; }
+.v2-print[data-cover="passage-index"] { --stock: #384958; }
+.v2-print[data-cover="saas-automation"] { --stock: #56432d; }
+.v2-print[data-cover="pulse-study"] { --stock: #404934; }
+.v2-print[data-cover="ml-research-lab"] { --stock: #244447; }
+.v2-print[data-cover="ai-deepfake-detector"] { --stock: #512f3e; }
+.v2-print::after { content: ""; position: absolute; inset: 5px; border: 1px solid color-mix(in srgb,currentColor 20%,transparent); border-radius: 5px; pointer-events: none; }
+.v2-print img { position: absolute; top: 17%; left: 16%; display: block; width: 68%; height: 59%; object-fit: contain; }
 .v2-imprint, .v2 small, .v2-register-heading > span { font: 500 11px/1.45 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 .v2-imprint, .v2-signature, .v2-mark { position: absolute; left: 6%; }
 .v2-imprint { top: 9%; font-size: clamp(8px,.75vw,11px); }
