@@ -17,13 +17,24 @@
   filter: drop-shadow(0 1px 1px #211b1540) drop-shadow(1px 4px 3px #211b152b);
 }
 .footer-stamp figcaption {
-  visibility: hidden; pointer-events: none; white-space: nowrap;
+  display: flex; align-items: center; justify-content: center; gap: .28em;
+  visibility: hidden; opacity: 0; pointer-events: none; white-space: nowrap; transform: rotate(-2deg);
   margin-top: 9px; color: var(--footer-muted);
   font: italic clamp(14px, 2vw, 18px)/1.2 var(--display, var(--serif, Georgia, serif));
 }
-.footer-stamp figcaption::before { content: "↑" / ""; margin-inline-end: .3em; font: normal .8em/1 sans-serif; }
+.stamp-arrow { width: 1em; height: .8em; flex: none; }
 @media (hover: hover) {
-  .footer-stamp img:hover + figcaption { visibility: visible; }
+  .footer-stamp img:hover + figcaption { visibility: visible; opacity: 1; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .footer-stamp figcaption {
+    translate: 0 -.24em;
+    transition: opacity 180ms ease-out, translate 180ms ease-out, visibility 0s linear 180ms;
+  }
+  .footer-stamp img:hover + figcaption { translate: 0 0; transition-delay: 0s; }
+  .stamp-arrow path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 180ms ease-out; }
+  .footer-stamp img:hover + figcaption .stamp-arrow path { stroke-dashoffset: 0; transition-duration: 310ms; }
+  .footer-stamp img:hover + figcaption .stamp-arrow path:last-child { transition-duration: 90ms; transition-delay: 310ms; }
 }
 .footer-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(8px, 3vw, 24px); border-top: 1px solid var(--footer-line); padding-block: 25px 32px; }
 .portfolio-footer .footer-links h2 { margin: 0 0 9px; color: var(--footer-muted); font: 500 11px/1.3 "Courier New", monospace; text-transform: uppercase; letter-spacing: .1em; }
