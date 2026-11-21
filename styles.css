@@ -60,3 +60,39 @@ body .v2-home { margin-top: 0; border-block: 1px solid var(--rule); }
   .home-nav a { font-size: 13px; }
   .about { grid-template-columns: 1fr; gap: 26px; }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .hero h1 > * { display: inline-block; animation: name-reveal 700ms cubic-bezier(.2,.75,.22,1) backwards; }
+  .hero h1 em { animation-delay: 90ms; }
+  .hero-lead, .hero-actions { animation: copy-reveal 540ms 130ms ease-out backwards; }
+  .hero-actions { animation-delay: 210ms; }
+  .portrait-print { animation: mount-print 720ms cubic-bezier(.2,.75,.22,1) backwards; transition: transform 350ms ease; }
+  .portrait img { transition: filter 500ms ease; }
+  .hero-actions a span, .about .hero-link span { transition: transform 230ms ease; }
+  .hero-actions a:is(:hover,:focus-visible) span { transform: translateY(2px); }
+  .hero-link:is(:hover,:focus-visible) span { transform: translate(2px,-2px); }
+  @media (hover: hover) {
+    .portrait:hover .portrait-print { transform: rotate(1deg); }
+    .portrait:hover img { filter: grayscale(.1) sepia(.08); }
+  }
+  @supports (animation-timeline: view()) {
+    .about h2, .bio p {
+      animation: copy-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 90%;
+    }
+  }
+  @keyframes name-reveal {
+    from { clip-path: inset(0 0 90%); translate: 0 .16em; filter: blur(3px); }
+    to { clip-path: inset(-15%); translate: 0; filter: blur(0); }
+  }
+  @keyframes copy-reveal {
+    from { opacity: .55; translate: 0 7px; }
+    to { opacity: 1; translate: 0; }
+  }
+  @keyframes mount-print {
+    from { opacity: .65; transform: rotate(1deg) translateY(7px); }
+    to { opacity: 1; transform: rotate(3deg) translateY(0); }
+  }
+}
